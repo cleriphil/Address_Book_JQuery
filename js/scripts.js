@@ -55,7 +55,7 @@ $(document).ready(function() {
     $("input#new-state").val("");
 
     $("#new-contact").each(function() {
-      this.reset();
+      this.reset();       //to empty the form 
     });
 
   });
