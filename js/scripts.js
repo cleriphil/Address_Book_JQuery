@@ -53,5 +53,10 @@ $(document).ready(function() {
     $("input#new-street").val("");
     $("input#new-city").val("");
     $("input#new-state").val("");
+
+    $("#new-contact").each(function() {
+      this.reset();
+    });
+
   });
 });
