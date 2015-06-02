@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").append('<div class="additional-address">' +
+                                  '<div class="new-address">' +
                                   '<div class="form-group">' +
                                     '<label for="new-street">Street</label>' +
                                     '<input type="text" class="form-control new-street">' +
@@ -13,11 +14,14 @@ $(document).ready(function() {
                                     '<label for="new-state">State</label>' +
                                     '<input type="text" class="form-control new-state">' +
                                   '</div>' +
+                                '</div>' +
                                 '</div>');
   });
 
   $("form#new-contact").submit(function(event){
     event.preventDefault();
+    $(".additional-address").hide();
+
 
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
@@ -45,6 +49,7 @@ $(document).ready(function() {
       newContact.addresses.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
+
     });
 
     resetFields();
